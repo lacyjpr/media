@@ -21,12 +21,14 @@
     "build": "npm-run-all build-css build-js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "format": "prettier --write \"**/*.{js,jsx}\""
+    "format": "prettier --write \"**/*.{js,jsx}\"",
+    "lint": "eslint src"
   },
   "devDependencies": {
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^5.0.1",
+    "eslint-plugin-react": "^7.10.0",
     "prettier": "^1.13.6"
   }
 }
