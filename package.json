@@ -7,14 +7,14 @@
   "license": "MIT",
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www",
-    "resetdb": "./bin/configuredb.sh"
+    "dev": "nodemon ./bin/www"
   },
   "devDependencies": {
     "nodemon": "^1.17.5"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
+    "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "pg": "^7.4.3"
   }
