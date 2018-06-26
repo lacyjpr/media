@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
-const users = require('./routes/users');
+const bodyParser = require('body-parser');
+const routes = require('./routes');
 
-// Routes
-app.use('/users', users);
+// Middleware
+app.use(bodyParser.json());
+app.use('/', routes);
 
 // Error handler
 app.use((err, req, res, next) => {
