@@ -10,6 +10,7 @@
     "dev": "nodemon ./bin/www"
   },
   "devDependencies": {
+    "eslint": "^5.0.1",
     "nodemon": "^1.17.5"
   },
   "dependencies": {
