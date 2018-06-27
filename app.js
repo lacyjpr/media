@@ -1,8 +1,9 @@
 const express = require('express');
-const app = express();
-require('dotenv').config();
 const bodyParser = require('body-parser');
 const routes = require('./routes');
+require('dotenv').config();
+
+const app = express();
 
 // Middleware
 app.use(bodyParser.json());
