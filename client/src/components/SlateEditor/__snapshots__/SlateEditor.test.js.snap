@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SlateEditor /> renders correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <SlateEditor />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "autoCorrect": true,
+      "autoFocus": false,
+      "onChange": [Function],
+      "plugins": Array [
+        Object {
+          "onKeyDown": [Function],
+        },
+        Object {
+          "onKeyDown": [Function],
+        },
+      ],
+      "readOnly": false,
+      "renderMark": [Function],
+      "schema": Object {},
+      "spellCheck": true,
+      "value": Object {
+        "document": Object {
+          "data": Object {},
+          "nodes": Array [
+            Object {
+              "data": Object {},
+              "isVoid": false,
+              "nodes": Array [
+                Object {
+                  "leaves": Array [
+                    Object {
+                      "marks": Array [],
+                      "object": "leaf",
+                      "text": "This text can be edited by the user.",
+                    },
+                  ],
+                  "object": "text",
+                },
+              ],
+              "object": "block",
+              "type": "paragraph",
+            },
+          ],
+          "object": "document",
+        },
+        "object": "value",
+      },
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "autoCorrect": true,
+        "autoFocus": false,
+        "onChange": [Function],
+        "plugins": Array [
+          Object {
+            "onKeyDown": [Function],
+          },
+          Object {
+            "onKeyDown": [Function],
+          },
+        ],
+        "readOnly": false,
+        "renderMark": [Function],
+        "schema": Object {},
+        "spellCheck": true,
+        "value": Object {
+          "document": Object {
+            "data": Object {},
+            "nodes": Array [
+              Object {
+                "data": Object {},
+                "isVoid": false,
+                "nodes": Array [
+                  Object {
+                    "leaves": Array [
+                      Object {
+                        "marks": Array [],
+                        "object": "leaf",
+                        "text": "This text can be edited by the user.",
+                      },
+                    ],
+                    "object": "text",
+                  },
+                ],
+                "object": "block",
+                "type": "paragraph",
+              },
+            ],
+            "object": "document",
+          },
+          "object": "value",
+        },
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
