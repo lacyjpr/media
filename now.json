@@ -1,5 +1,6 @@
 {
   "env": {
+    "PORT": 443,
     "NODE_ENV": "production",
     "ELEPHANT_USER": "@elephant-user",
     "ELEPHANT_DATABASE": "@elephant-database",
