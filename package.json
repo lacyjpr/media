@@ -12,7 +12,7 @@
     "dev": "concurrently \"yarn server\" \"yarn client\"",
     "client-install": "npm install --prefix client",
     "client-build": "npm run build --prefix client",
-    "postbuild": "npm run client-install && npm run client-build"
+    "build": "npm run client-install && npm run client-build"
   },
   "devDependencies": {
     "eslint": "^5.0.1",
