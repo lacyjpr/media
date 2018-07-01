@@ -10,9 +10,9 @@
     "server": "nodemon --verbose ./bin/www",
     "client": "cd ./client && yarn start",
     "dev": "concurrently \"yarn server\" \"yarn client\"",
-    "client-install": "(cd ./client && yarn install)",
-    "client-build": "(cd ./client && yarn run build)",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn run client-install && yarn run client-build"
+    "client-install": "npm install --prefix client",
+    "client-build": "(npm run build --prefix client)",
+    "build": "npm run client-install && npm run client-build"
   },
   "devDependencies": {
     "eslint": "^5.0.1",
