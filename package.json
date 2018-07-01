@@ -15,12 +15,12 @@
     "build": "npm run client-install && npm run client-build"
   },
   "devDependencies": {
+    "concurrently": "^3.6.0",
     "eslint": "^5.0.1",
     "nodemon": "^1.17.5"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
-    "concurrently": "^3.6.0",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "path": "^0.12.7",
