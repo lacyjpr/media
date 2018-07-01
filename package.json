@@ -12,7 +12,7 @@
     "dev": "concurrently \"yarn server\" \"yarn client\"",
     "client-install": "(cd ./client && yarn install)",
     "client-build": "(cd ./client && yarn run build)",
-    "heroku-postbuild": "yarn run client-install && yarn run client-build"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn run client-install && yarn run client-build"
   },
   "devDependencies": {
     "eslint": "^5.0.1",
