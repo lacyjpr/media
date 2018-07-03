@@ -14,11 +14,6 @@ app.use((err, req, res, next) => {
   res.json(err);
 });
 
-<<<<<<< HEAD
-// This is a cool comment!
-
-||||||| merged common ancestors
-=======
 // Handle client routes
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
@@ -28,5 +23,4 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
->>>>>>> test/client
 module.exports = app;
