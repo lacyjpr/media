@@ -8,10 +8,10 @@
   "scripts": {
     "start": "node ./bin/www",
     "server": "nodemon --verbose ./bin/www",
-    "client": "cd ./client && yarn start",
-    "dev": "concurrently \"yarn server\" \"yarn client\"",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
     "client-install": "npm install --prefix client",
-    "client-build": "(npm run build --prefix client)",
+    "client-build": "npm run build --prefix client",
     "build": "npm run client-install && npm run client-build"
   },
   "devDependencies": {
