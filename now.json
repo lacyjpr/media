@@ -1,1 +1,10 @@
-{}
+{
+  "env": {
+    "NODE_ENV": "production",
+    "ELEPHANT_USER": "@elephant-user",
+    "ELEPHANT_DATABASE": "@elephant-database",
+    "ELEPHANT_HOST": "@elephant-host",
+    "ELEPHANT_PASSWORD": "@elephant-password",
+    "ELEPHANT_PORT": "@elephant-port"
+  }
+}
