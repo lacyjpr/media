@@ -14,6 +14,19 @@ app.use((err, req, res, next) => {
   res.json(err);
 });
 
+<<<<<<< HEAD
 // This is a cool comment!
 
+||||||| merged common ancestors
+=======
+// Handle client routes
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+  const path = require('path');
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
+
+>>>>>>> test/client
 module.exports = app;
