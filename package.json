@@ -14,6 +14,9 @@
     "client-build": "npm run build --prefix client",
     "build": "npm run client-install && npm run client-build"
   },
+  "devEngines": {
+    "node": "8.x || 9.x || 10.x"
+  },
   "devDependencies": {
     "concurrently": "^3.6.0",
     "eslint": "^5.0.1",
