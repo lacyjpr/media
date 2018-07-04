@@ -15,7 +15,7 @@
     "build": "npm run client-install && npm run client-build"
   },
   "devEngines": {
-    "node": "8.x || 9.x || 10.x"
+    "node": ">=8.x"
   },
   "devDependencies": {
     "concurrently": "^3.6.0",
