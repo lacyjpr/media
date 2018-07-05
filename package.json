@@ -1,5 +1,5 @@
 {
-  "name": "Media",
+  "name": "media",
   "version": "0.0.1",
   "main": "app.js",
   "repository": "https://github.com/lacyjpr/media.git",
@@ -7,9 +7,18 @@
   "license": "MIT",
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www"
+    "server": "nodemon ./bin/www",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "client-install": "npm install --prefix client",
+    "client-build": "npm run build --prefix client",
+    "build": "npm run client-install && npm run client-build"
+  },
+  "devEngines": {
+    "node": ">=8.x"
   },
   "devDependencies": {
+    "concurrently": "^3.6.0",
     "eslint": "^5.0.1",
     "nodemon": "^1.17.5"
   },
@@ -17,6 +26,7 @@
     "body-parser": "^1.18.3",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
+    "path": "^0.12.7",
     "pg": "^7.4.3"
   }
 }
