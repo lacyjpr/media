@@ -15,6 +15,10 @@ class AuthProvider extends Component {
     setTimeout(() => this.setState({ isAuth: true }), 1000);
   };
 
+  logout = () => {
+    this.setState({ isAuth: false });
+  };
+
   render() {
     return (
       <AuthContext.Provider value={{ isAuth: this.state.isAuth }}>
