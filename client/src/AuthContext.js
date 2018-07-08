@@ -21,7 +21,13 @@ class AuthProvider extends Component {
 
   render() {
     return (
-      <AuthContext.Provider value={{ isAuth: this.state.isAuth }}>
+      <AuthContext.Provider
+        value={{
+          isAuth: this.state.isAuth,
+          login: this.login,
+          logout: this.logout,
+        }}
+      >
         {this.props.children}
       </AuthContext.Provider>
     );

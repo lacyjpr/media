@@ -5,7 +5,7 @@ import { AuthConsumer } from './AuthContext';
 const Header = () => (
   <header>
     <AuthConsumer>
-      {({ isAuth }) => (
+      {({ isAuth, login, logout }) => (
         <div>
           <h3>
             <Link to="/">HOME</Link>
@@ -13,10 +13,10 @@ const Header = () => (
           {isAuth ? (
             <ul>
               <Link to="/dashboard">Dashboard</Link>
-              <button>logout</button>
+              <button onClick={logout}>logout</button>
             </ul>
           ) : (
-            <button>login</button>
+            <button onClick={login}>login</button>
           )}
         </div>
       )}
