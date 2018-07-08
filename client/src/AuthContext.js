@@ -1,3 +1,4 @@
+// Context credit https://codesandbox.io/s/zl8wq6xlqx
 import React, { Component } from 'react';
 
 const AuthContext = React.createContext();
