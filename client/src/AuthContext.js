@@ -10,6 +10,11 @@ class AuthProvider extends Component {
     this.state = { isAuth: false };
   }
 
+  login = () => {
+    // Fake async with setTimeout
+    setTimeout(() => this.setState({ isAuth: true }), 1000);
+  };
+
   render() {
     return (
       <AuthContext.Provider value={{ isAuth: this.state.isAuth }}>
