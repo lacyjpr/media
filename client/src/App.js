@@ -5,6 +5,7 @@ import { AuthProvider } from './AuthContext';
 import Header from './Header';
 import Landing from './Landing';
 import Dashboard from './Dashboard';
+import ProtectedRoute from './ProtectedRoute';
 
 import './App.css';
 
@@ -25,7 +26,7 @@ class App extends Component {
             <Header />
             <Switch>
               <Route exact path="/" component={Landing} />
-              <Route path="/dashboard" component={Dashboard} />
+              <ProtectedRoute path="/dashboard" component={Dashboard} />
             </Switch>
           </AuthProvider>
         </Router>
