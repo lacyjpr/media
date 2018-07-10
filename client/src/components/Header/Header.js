@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { AuthConsumer } from './AuthContext';
+import { AuthConsumer } from './../AuthContext';
 
 const Header = () => (
   <header>
@@ -12,7 +12,7 @@ const Header = () => (
           </h3>
           {isAuth ? (
             <ul>
-              <Link to="/dashboard">Dashboard</Link>
+              <Link to="/userhome">User Home</Link>
               <button onClick={logout}>logout</button>
             </ul>
           ) : (

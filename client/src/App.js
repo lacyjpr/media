@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { AuthProvider } from './AuthContext';
+import { AuthProvider } from './components/AuthContext.js';
 
-import Header from './Header';
-import Landing from './Landing';
-import Dashboard from './Dashboard';
-import ProtectedRoute from './ProtectedRoute';
+import Header from './components/Header';
+import Home from './components/Home';
+import UserHome from './components/UserHome';
+import ProtectedRoute from './components/ProtectedRoute';
 
 import './App.css';
 
@@ -25,8 +25,8 @@ class App extends Component {
           <AuthProvider>
             <Header />
             <Switch>
-              <Route exact path="/" component={Landing} />
-              <ProtectedRoute path="/dashboard" component={Dashboard} />
+              <Route exact path="/" component={Home} />
+              <ProtectedRoute path="/userhome" component={UserHome} />
             </Switch>
           </AuthProvider>
         </Router>
