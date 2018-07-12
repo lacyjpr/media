@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { AuthProvider } from './components/AuthContext.js';
+import { Button } from 'reactstrap';
 
 import Header from './components/Header';
 import Home from './components/Home';
@@ -28,6 +29,7 @@ class App extends Component {
               <Route exact path="/" component={Home} />
               <ProtectedRoute path="/userhome" component={UserHome} />
             </Switch>
+            <Button color="primary">Bootstrap Button</Button>
           </AuthProvider>
         </Router>
       </div>
