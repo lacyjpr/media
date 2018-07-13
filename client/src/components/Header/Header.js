@@ -49,9 +49,6 @@ class Header extends Component {
                       )}
                     </NavItem>
                   )}
-                  {/* <NavItem>
-                  <NavLink href="/components/">Components</NavLink>
-                </NavItem> */}
                 </AuthConsumer>
 
                 <NavItem>
@@ -68,7 +65,7 @@ class Header extends Component {
                             <Link to="/userhome">User Home</Link>
                           </NavItem>
                           <NavItem>
-                            <button onClick={logout}>logout</button>
+                            <div onClick={logout}>logout</div>
                           </NavItem>
                         </div>
                       ) : (
