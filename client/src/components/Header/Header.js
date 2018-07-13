@@ -14,6 +14,7 @@ import {
   DropdownItem,
 } from 'reactstrap';
 
+import person from '../../assets/person-outline.svg';
 import { AuthConsumer } from './../AuthContext';
 
 class Header extends Component {
@@ -73,7 +74,7 @@ class Header extends Component {
                 </AuthConsumer>
                 <UncontrolledDropdown nav inNavbar>
                   <DropdownToggle nav caret>
-                    Options
+                    <img src={person} alt="person" />
                   </DropdownToggle>
                   <DropdownMenu right>
                     <DropdownItem>Option 1</DropdownItem>
