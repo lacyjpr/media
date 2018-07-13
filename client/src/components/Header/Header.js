@@ -60,16 +60,13 @@ class Header extends Component {
                   {({ isAuth, login, logout }) => (
                     <div>
                       {isAuth ? (
-                        <div>
-                          <NavItem>
-                            <Link to="/userhome">User Home</Link>
-                          </NavItem>
-                          <NavItem>
-                            <div onClick={logout}>logout</div>
-                          </NavItem>
-                        </div>
+                        <NavLink href="#" onClick={logout}>
+                          logout
+                        </NavLink>
                       ) : (
-                        <button onClick={login}>login</button>
+                        <NavLink href="#" onClick={login}>
+                          login
+                        </NavLink>
                       )}
                     </div>
                   )}
