@@ -33,37 +33,50 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <AuthConsumer>
-          {({ isAuth, login, logout }) => (
-            <div>
-              <h3>
-                <Link to="/">HOME</Link>
-              </h3>
-              {isAuth ? (
-                <ul>
-                  <Link to="/userhome">User Home</Link>
-                  <button onClick={logout}>logout</button>
-                </ul>
-              ) : (
-                <button onClick={login}>login</button>
-              )}
-            </div>
-          )}
-        </AuthConsumer>
         <div>
           <Navbar color="light" light expand="md">
-            <NavbarBrand href="/">reactstrap</NavbarBrand>
+            <NavbarBrand href="/">Media</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
-                <NavItem>
+                <AuthConsumer>
+                  {({ isAuth }) => (
+                    <NavItem>
+                      {isAuth && (
+                        <NavLink tag={Link} to="/userhome">
+                          User Home
+                        </NavLink>
+                      )}
+                    </NavItem>
+                  )}
+                  {/* <NavItem>
                   <NavLink href="/components/">Components</NavLink>
-                </NavItem>
+                </NavItem> */}
+                </AuthConsumer>
+
                 <NavItem>
                   <NavLink href="https://github.com/reactstrap/reactstrap">
                     GitHub
                   </NavLink>
                 </NavItem>
+                <AuthConsumer>
+                  {({ isAuth, login, logout }) => (
+                    <div>
+                      {isAuth ? (
+                        <div>
+                          <NavItem>
+                            <Link to="/userhome">User Home</Link>
+                          </NavItem>
+                          <NavItem>
+                            <button onClick={logout}>logout</button>
+                          </NavItem>
+                        </div>
+                      ) : (
+                        <button onClick={login}>login</button>
+                      )}
+                    </div>
+                  )}
+                </AuthConsumer>
                 <UncontrolledDropdown nav inNavbar>
                   <DropdownToggle nav caret>
                     Options
