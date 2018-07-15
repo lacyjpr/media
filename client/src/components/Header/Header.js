@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Collapse,
   Navbar,
-  NavbarToggler,
   NavbarBrand,
   Nav,
   NavItem,
@@ -55,29 +53,32 @@ class Header extends Component {
                   </NavItem>
                 )}
               </AuthConsumer>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  <img src={person} alt="person" />
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>
-                    <AuthConsumer>
-                      {({ isAuth }) => (
-                        <NavItem>
-                          {isAuth && (
-                            <NavLink tag={Link} to="/userhome">
-                              User Home
-                            </NavLink>
-                          )}
-                        </NavItem>
-                      )}
-                    </AuthConsumer>
-                  </DropdownItem>
-                  <DropdownItem>Option 2</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>Reset</DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
+
+              <AuthConsumer>
+                {({ isAuth }) => (
+                  <UncontrolledDropdown nav inNavbar>
+                    {isAuth && (
+                      <div>
+                        <DropdownToggle nav caret>
+                          <img src={person} alt="person" />
+                        </DropdownToggle>
+                        <DropdownMenu right>
+                          <DropdownItem>
+                            <NavItem>
+                              <NavLink tag={Link} to="/userhome">
+                                User Home
+                              </NavLink>
+                            </NavItem>
+                          </DropdownItem>
+                          <DropdownItem>Option 2</DropdownItem>
+                          <DropdownItem divider />
+                          <DropdownItem>Reset</DropdownItem>
+                        </DropdownMenu>
+                      </div>
+                    )}
+                  </UncontrolledDropdown>
+                )}
+              </AuthConsumer>
             </Nav>
             {/* </Collapse> */}
           </Navbar>
