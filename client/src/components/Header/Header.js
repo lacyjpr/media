@@ -58,11 +58,9 @@ class Header extends Component {
                         </DropdownToggle>
                         <DropdownMenu right>
                           <DropdownItem>
-                            <NavItem>
-                              <NavLink tag={Link} to="/userhome">
-                                User Home
-                              </NavLink>
-                            </NavItem>
+                            <NavLink tag={Link} to="/userhome">
+                              User Home
+                            </NavLink>
                           </DropdownItem>
                           <DropdownItem>
                             <NavLink href="#" onClick={logout}>
