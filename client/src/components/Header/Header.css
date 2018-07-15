@@ -1,0 +1,7 @@
+.dropdown-toggle::after {
+  border: none;
+}
+
+.person {
+  height: 30px;
+}

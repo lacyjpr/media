@@ -14,6 +14,7 @@ import {
 
 import person from '../../assets/person-outline.svg';
 import { AuthConsumer } from './../AuthContext';
+import './Header.css';
 
 class Header extends Component {
   render() {
@@ -36,7 +37,7 @@ class Header extends Component {
                     {isAuth && (
                       <div>
                         <DropdownToggle nav caret>
-                          <img src={person} alt="person" />
+                          <img src={person} alt="person" className="person" />
                         </DropdownToggle>
                         <DropdownMenu right>
                           <DropdownItem>
