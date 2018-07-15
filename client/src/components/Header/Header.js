@@ -39,11 +39,7 @@ class Header extends Component {
               <AuthConsumer>
                 {({ isAuth, login, logout }) => (
                   <NavItem>
-                    {isAuth ? (
-                      <NavLink href="#" onClick={logout}>
-                        logout
-                      </NavLink>
-                    ) : (
+                    {!isAuth && (
                       <NavLink href="#" onClick={login}>
                         login
                       </NavLink>
@@ -53,7 +49,7 @@ class Header extends Component {
               </AuthConsumer>
 
               <AuthConsumer>
-                {({ isAuth }) => (
+                {({ isAuth, logout }) => (
                   <UncontrolledDropdown nav inNavbar>
                     {isAuth && (
                       <div>
@@ -68,7 +64,11 @@ class Header extends Component {
                               </NavLink>
                             </NavItem>
                           </DropdownItem>
-                          <DropdownItem>Option 2</DropdownItem>
+                          <DropdownItem>
+                            <NavLink href="#" onClick={logout}>
+                              logout
+                            </NavLink>
+                          </DropdownItem>
                           <DropdownItem divider />
                           <DropdownItem>Reset</DropdownItem>
                         </DropdownMenu>
