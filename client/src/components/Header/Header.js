@@ -37,7 +37,7 @@ class Header extends Component {
             <NavbarBrand href="/">Media</NavbarBrand>
             <Nav className="ml-auto" navbar>
               <AuthConsumer>
-                {({ isAuth, login, logout }) => (
+                {({ isAuth, login }) => (
                   <NavItem>
                     {!isAuth && (
                       <NavLink href="#" onClick={login}>
