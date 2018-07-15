@@ -69,8 +69,6 @@ class Header extends Component {
                               logout
                             </NavLink>
                           </DropdownItem>
-                          <DropdownItem divider />
-                          <DropdownItem>Reset</DropdownItem>
                         </DropdownMenu>
                       </div>
                     )}
