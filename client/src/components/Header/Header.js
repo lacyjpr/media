@@ -35,56 +35,51 @@ class Header extends Component {
     return (
       <header>
         <div>
-          <Navbar color="light" light expand="md">
+          <Navbar color="light" light expand="xs">
             <NavbarBrand href="/">Media</NavbarBrand>
-            <NavbarToggler onClick={this.toggle} />
-            <Collapse isOpen={this.state.isOpen} navbar>
-              <Nav className="ml-auto" navbar>
-                <AuthConsumer>
-                  {({ isAuth }) => (
-                    <NavItem>
-                      {isAuth && (
-                        <NavLink tag={Link} to="/userhome">
-                          User Home
-                        </NavLink>
+            {/* <NavbarToggler onClick={this.toggle} /> */}
+            {/* <Collapse isOpen={this.state.isOpen} navbar> */}
+            <Nav className="ml-auto" navbar>
+              <AuthConsumer>
+                {({ isAuth, login, logout }) => (
+                  <NavItem>
+                    {isAuth ? (
+                      <NavLink href="#" onClick={logout}>
+                        logout
+                      </NavLink>
+                    ) : (
+                      <NavLink href="#" onClick={login}>
+                        login
+                      </NavLink>
+                    )}
+                  </NavItem>
+                )}
+              </AuthConsumer>
+              <UncontrolledDropdown nav inNavbar>
+                <DropdownToggle nav caret>
+                  <img src={person} alt="person" />
+                </DropdownToggle>
+                <DropdownMenu right>
+                  <DropdownItem>
+                    <AuthConsumer>
+                      {({ isAuth }) => (
+                        <NavItem>
+                          {isAuth && (
+                            <NavLink tag={Link} to="/userhome">
+                              User Home
+                            </NavLink>
+                          )}
+                        </NavItem>
                       )}
-                    </NavItem>
-                  )}
-                </AuthConsumer>
-
-                <NavItem>
-                  <NavLink href="https://github.com/reactstrap/reactstrap">
-                    GitHub
-                  </NavLink>
-                </NavItem>
-                <AuthConsumer>
-                  {({ isAuth, login, logout }) => (
-                    <div>
-                      {isAuth ? (
-                        <NavLink href="#" onClick={logout}>
-                          logout
-                        </NavLink>
-                      ) : (
-                        <NavLink href="#" onClick={login}>
-                          login
-                        </NavLink>
-                      )}
-                    </div>
-                  )}
-                </AuthConsumer>
-                <UncontrolledDropdown nav inNavbar>
-                  <DropdownToggle nav caret>
-                    <img src={person} alt="person" />
-                  </DropdownToggle>
-                  <DropdownMenu right>
-                    <DropdownItem>Option 1</DropdownItem>
-                    <DropdownItem>Option 2</DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>Reset</DropdownItem>
-                  </DropdownMenu>
-                </UncontrolledDropdown>
-              </Nav>
-            </Collapse>
+                    </AuthConsumer>
+                  </DropdownItem>
+                  <DropdownItem>Option 2</DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem>Reset</DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
+            </Nav>
+            {/* </Collapse> */}
           </Navbar>
         </div>
       </header>
