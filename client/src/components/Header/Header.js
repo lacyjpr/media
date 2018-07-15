@@ -16,19 +16,6 @@ import person from '../../assets/person-outline.svg';
 import { AuthConsumer } from './../AuthContext';
 
 class Header extends Component {
-  constructor() {
-    super();
-    this.state = {
-      isOpen: false,
-    };
-  }
-
-  toggle = () => {
-    this.setState({
-      isOpen: !this.state.isOpen,
-    });
-  };
-
   render() {
     return (
       <header>
