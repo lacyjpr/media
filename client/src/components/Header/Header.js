@@ -23,18 +23,6 @@ class Header extends Component {
           <Navbar color="light" light expand="xs">
             <NavbarBrand href="/">Media</NavbarBrand>
             <Nav className="ml-auto" navbar>
-              {/* <AuthConsumer>
-                {({ isAuth, login }) => (
-                  <NavItem>
-                    {!isAuth && (
-                      <NavLink href="#" onClick={login}>
-                        login
-                      </NavLink>
-                    )}
-                  </NavItem>
-                )}
-              </AuthConsumer> */}
-
               <AuthConsumer>
                 {({ isAuth, login, logout }) => (
                   <div>
