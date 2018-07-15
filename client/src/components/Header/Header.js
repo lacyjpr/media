@@ -35,8 +35,6 @@ class Header extends Component {
         <div>
           <Navbar color="light" light expand="xs">
             <NavbarBrand href="/">Media</NavbarBrand>
-            {/* <NavbarToggler onClick={this.toggle} /> */}
-            {/* <Collapse isOpen={this.state.isOpen} navbar> */}
             <Nav className="ml-auto" navbar>
               <AuthConsumer>
                 {({ isAuth, login, logout }) => (
@@ -80,7 +78,6 @@ class Header extends Component {
                 )}
               </AuthConsumer>
             </Nav>
-            {/* </Collapse> */}
           </Navbar>
         </div>
       </header>
