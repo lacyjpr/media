@@ -7,6 +7,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import UserHome from './components/UserHome';
 import ProtectedRoute from './components/ProtectedRoute';
+import SignUp from './components/SignUp';
 
 import './App.css';
 
@@ -27,6 +28,7 @@ class App extends Component {
             <Header />
             <Switch>
               <Route exact path="/" component={Home} />
+              <Route path="/signup" component={SignUp} />
               <ProtectedRoute path="/userhome" component={UserHome} />
             </Switch>
             <Button color="primary">Bootstrap Button</Button>
