@@ -19,7 +19,7 @@ import './Header.css';
 const Header = () => {
   return (
     <header>
-      <Navbar color="light" light expand="xl">
+      <Navbar color="light" light expand="xs">
         <NavbarBrand href="/">Media</NavbarBrand>
         <Nav className="ml-auto nav" navbar>
           <AuthConsumer>
