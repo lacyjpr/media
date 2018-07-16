@@ -27,16 +27,14 @@ const Header = () => {
               <div>
                 <NavItem>
                   {!isAuth && (
-                    <NavLink href="#" onClick={login}>
-                      login
-                    </NavLink>
-                  )}
-                </NavItem>
-                <NavItem>
-                  {!isAuth && (
-                    <NavLink tag={Link} to="/signup">
-                      Sign Up
-                    </NavLink>
+                    <div>
+                      <NavLink href="#" onClick={login}>
+                        login
+                      </NavLink>
+                      <NavLink tag={Link} to="/signup">
+                        Sign Up
+                      </NavLink>
+                    </div>
                   )}
                 </NavItem>
                 <UncontrolledDropdown nav inNavbar>

@@ -5,3 +5,8 @@
 .person {
   height: 22px;
 }
+
+.nav-link {
+  display: inline;
+  padding: 0.5rem 1rem;
+}
