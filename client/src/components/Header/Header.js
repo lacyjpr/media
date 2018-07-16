@@ -19,9 +19,9 @@ import './Header.css';
 const Header = () => {
   return (
     <header>
-      <Navbar color="light" light expand="xs">
+      <Navbar color="light" light expand="xl">
         <NavbarBrand href="/">Media</NavbarBrand>
-        <Nav className="ml-auto" navbar>
+        <Nav className="ml-auto nav" navbar>
           <AuthConsumer>
             {({ isAuth, login, logout }) => (
               <div>
@@ -29,6 +29,13 @@ const Header = () => {
                   {!isAuth && (
                     <NavLink href="#" onClick={login}>
                       login
+                    </NavLink>
+                  )}
+                </NavItem>
+                <NavItem>
+                  {!isAuth && (
+                    <NavLink tag={Link} to="/signup">
+                      Sign Up
                     </NavLink>
                   )}
                 </NavItem>
