@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Form, FormGroup, Label, Input } from 'reactstrap';
 
 class SignUp extends Component {
   constructor() {
@@ -9,8 +10,29 @@ class SignUp extends Component {
     };
   }
 
+  toggle = () => {
+    console.log(this.state);
+    this.setState({
+      agreed: !this.state.agreed,
+    });
+    console.log(this.state);
+  };
+
   render() {
-    return <h2>Sign Up</h2>;
+    return (
+      <div>
+        <h2>Sign Up</h2>
+        <Form>
+          <FormGroup check>
+            <Label check>
+              <Input type="checkbox" onChange={this.toggle} />
+              I agree
+            </Label>
+          </FormGroup>
+        </Form>
+        {this.state.agreed && <h2>agreed!</h2>}
+      </div>
+    );
   }
 }
 
