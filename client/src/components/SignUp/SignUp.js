@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { Form, FormGroup, Label, Input } from 'reactstrap';
+import { Redirect } from 'react-router-dom';
+import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
+
+import { AuthConsumer } from './../AuthContext';
 
 class SignUp extends Component {
   constructor() {
@@ -30,7 +33,16 @@ class SignUp extends Component {
             </Label>
           </FormGroup>
         </Form>
-        {this.state.agreed && <h2>agreed!</h2>}
+        {this.state.agreed && (
+          <AuthConsumer>
+            {({ isAuth, login }) => (
+              <div>
+                <Button onClick={login}>Sign Up</Button>
+                <div>{isAuth && <Redirect to="/" />}</div>
+              </div>
+            )}
+          </AuthConsumer>
+        )}
       </div>
     );
   }
