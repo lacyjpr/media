@@ -26,7 +26,7 @@ class SignUp extends Component {
           <FormGroup check>
             <Label check>
               <Input type="checkbox" onChange={this.toggle} />
-              I agree
+              I agree to the Terms of Use & Privacy Policy
             </Label>
           </FormGroup>
         </Form>
