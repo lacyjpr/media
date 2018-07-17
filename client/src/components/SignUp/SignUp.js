@@ -14,11 +14,9 @@ class SignUp extends Component {
   }
 
   toggle = () => {
-    console.log(this.state);
     this.setState({
       agreed: !this.state.agreed,
     });
-    console.log(this.state);
   };
 
   render() {
