@@ -12,10 +12,16 @@ import SignUp from './components/SignUp';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = { data: null };
+  }
   componentDidMount() {
     fetch('/users').then(res =>
       res.json().then(data => {
         console.log('data', JSON.stringify(data, null, 4));
+        this.setState({ data: data });
+        console.log(this.state);
       })
     );
   }
