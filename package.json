@@ -27,6 +27,7 @@
     "dotenv": "^6.0.0",
     "emotion": "^9.2.6",
     "express": "^4.16.3",
+    "is-hotkey": "^0.1.2",
     "path": "^0.12.7",
     "pg": "^7.4.3",
     "react-emotion": "^9.2.6"
