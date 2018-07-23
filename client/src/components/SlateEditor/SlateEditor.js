@@ -5,6 +5,7 @@ import { isKeyHotkey } from 'is-hotkey';
 
 import { Button, Icon, Toolbar } from './components';
 import initialValue from './value.json';
+import './SlateEditor.css';
 
 /**
  * Define the default node type.
