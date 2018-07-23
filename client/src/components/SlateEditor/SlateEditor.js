@@ -32,7 +32,7 @@ const isCodeHotkey = isKeyHotkey('mod+`');
  * @type {Component}
  */
 
-class RichTextExample extends Component {
+class SlateEditor extends Component {
   /**
    * Deserialize the initial editor value.
    *
@@ -75,7 +75,7 @@ class RichTextExample extends Component {
 
   render() {
     return (
-      <div>
+      <div className="wrap-editor">
         <Toolbar>
           {this.renderMarkButton('bold', 'format_bold')}
           {this.renderMarkButton('italic', 'format_italic')}
@@ -306,4 +306,4 @@ class RichTextExample extends Component {
  * Export.
  */
 
-export default RichTextExample;
+export default SlateEditor;
