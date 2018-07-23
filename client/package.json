@@ -9,9 +9,12 @@
   },
   "dependencies": {
     "bootstrap": "^4.1.1",
+    "emotion": "^9.2.6",
     "immutable": "^3.8.2",
+    "is-hotkey": "^0.1.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-emotion": "^9.2.6",
     "react-scripts": "1.1.4",
     "reactstrap": "^6.3.0",
     "slate": "^0.34.2",
