@@ -73,3 +73,11 @@ input:focus {
 [data-slate-editor] > * + * {
   margin-top: 1em;
 }
+
+.wrap-editor {
+  text-align: left;
+  /* max-width: 42em; */
+  margin: 0px auto 20px;
+  padding: 20px;
+  background: rgb(255, 255, 255);
+}
