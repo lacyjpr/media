@@ -204,6 +204,8 @@ class SlateEditor extends Component {
    */
 
   onChange = ({ value }) => {
+    const content = JSON.stringify(value.toJSON());
+    localStorage.setItem('content', content);
     this.setState({ value });
   };
 
