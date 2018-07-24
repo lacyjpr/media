@@ -15,6 +15,8 @@ import './SlateEditor.css';
 
 const DEFAULT_NODE = 'paragraph';
 
+const existingValue = JSON.parse(localStorage.getItem('content'));
+
 /**
  * Define hotkey matchers.
  *
@@ -40,7 +42,7 @@ class SlateEditor extends Component {
    */
 
   state = {
-    value: Value.fromJSON(initialValue),
+    value: Value.fromJSON(existingValue || initialValue),
   };
 
   /**
