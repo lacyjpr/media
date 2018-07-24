@@ -206,8 +206,12 @@ class SlateEditor extends Component {
    */
 
   onChange = ({ value }) => {
-    const content = JSON.stringify(value.toJSON());
-    localStorage.setItem('content', content);
+    // Check for change before saving
+    if (value.document != this.state.value.document) {
+      const content = JSON.stringify(value.toJSON());
+      localStorage.setItem('content', content);
+    }
+
     this.setState({ value });
   };
 
