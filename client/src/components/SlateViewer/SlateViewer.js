@@ -59,7 +59,7 @@ class SlateViewer extends Component {
 
   render() {
     return (
-      <div>
+      <div className="wrap-editor">
         <h2>Slate Viewer</h2>
         <Editor
           readOnly
