@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+
 import SlateEditor from './components/SlateEditor';
+import SlateViewer from './components/SlateViewer';
 
 import { Button } from 'reactstrap';
 
@@ -26,6 +28,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p> */}
         <SlateEditor />
+        <SlateViewer />
         <Button color="primary">Bootstrap Button</Button>
       </div>
     );
