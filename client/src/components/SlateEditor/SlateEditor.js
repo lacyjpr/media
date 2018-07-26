@@ -55,7 +55,7 @@ class SlateEditor extends Component {
 
   hasMark = type => {
     const { value } = this.state;
-    return value.activeMarks.some(mark => mark.type == type);
+    return value.activeMarks.some(mark => mark.type === type);
   };
 
   /**
@@ -67,7 +67,7 @@ class SlateEditor extends Component {
 
   hasBlock = type => {
     const { value } = this.state;
-    return value.blocks.some(node => node.type == type);
+    return value.blocks.some(node => node.type === type);
   };
 
   /**
@@ -160,7 +160,7 @@ class SlateEditor extends Component {
 
   onChange = ({ value }) => {
     // Check for change before saving
-    if (value.document != this.state.value.document) {
+    if (value.document !== this.state.value.document) {
       const content = JSON.stringify(value.toJSON());
       localStorage.setItem('content', content);
     }
@@ -224,7 +224,7 @@ class SlateEditor extends Component {
     const { document } = value;
 
     // Handle everything but list buttons.
-    if (type != 'bulleted-list' && type != 'numbered-list') {
+    if (type !== 'bulleted-list' && type !== 'numbered-list') {
       const isActive = this.hasBlock(type);
       const isList = this.hasBlock('list-item');
 
@@ -240,7 +240,7 @@ class SlateEditor extends Component {
       // Handle the extra wrapping required for list buttons.
       const isList = this.hasBlock('list-item');
       const isType = value.blocks.some(block => {
-        return !!document.getClosest(block.key, parent => parent.type == type);
+        return !!document.getClosest(block.key, parent => parent.type === type);
       });
 
       if (isList && isType) {
@@ -251,7 +251,7 @@ class SlateEditor extends Component {
       } else if (isList) {
         change
           .unwrapBlock(
-            type == 'bulleted-list' ? 'numbered-list' : 'bulleted-list'
+            type === 'bulleted-list' ? 'numbered-list' : 'bulleted-list'
           )
           .wrapBlock(type);
       } else {
