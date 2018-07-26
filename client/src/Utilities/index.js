@@ -23,6 +23,8 @@ export const renderNode = props => {
       return <li {...attributes}>{children}</li>;
     case 'numbered-list':
       return <ol {...attributes}>{children}</ol>;
+    default:
+      return;
   }
 };
 
@@ -45,5 +47,7 @@ export const renderMark = props => {
       return <em {...attributes}>{children}</em>;
     case 'underlined':
       return <u {...attributes}>{children}</u>;
+    default:
+      return;
   }
 };
