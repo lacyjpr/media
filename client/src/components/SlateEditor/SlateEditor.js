@@ -4,6 +4,7 @@ import { Value } from 'slate';
 import { isKeyHotkey } from 'is-hotkey';
 
 import { Button, Icon, Toolbar } from './components';
+import { renderNode, renderMark } from '../../Utilities';
 import initialValue from './value.json';
 import './SlateEditor.css';
 
@@ -96,8 +97,8 @@ class SlateEditor extends Component {
           value={this.state.value}
           onChange={this.onChange}
           onKeyDown={this.onKeyDown}
-          renderNode={this.renderNode}
-          renderMark={this.renderMark}
+          renderNode={renderNode}
+          renderMark={renderMark}
         />
       </div>
     );
@@ -149,54 +150,6 @@ class SlateEditor extends Component {
         <Icon>{icon}</Icon>
       </Button>
     );
-  };
-
-  /**
-   * Render a Slate node.
-   *
-   * @param {Object} props
-   * @return {Element}
-   */
-
-  renderNode = props => {
-    const { attributes, children, node } = props;
-
-    switch (node.type) {
-      case 'block-quote':
-        return <blockquote {...attributes}>{children}</blockquote>;
-      case 'bulleted-list':
-        return <ul {...attributes}>{children}</ul>;
-      case 'heading-one':
-        return <h1 {...attributes}>{children}</h1>;
-      case 'heading-two':
-        return <h2 {...attributes}>{children}</h2>;
-      case 'list-item':
-        return <li {...attributes}>{children}</li>;
-      case 'numbered-list':
-        return <ol {...attributes}>{children}</ol>;
-    }
-  };
-
-  /**
-   * Render a Slate mark.
-   *
-   * @param {Object} props
-   * @return {Element}
-   */
-
-  renderMark = props => {
-    const { children, mark, attributes } = props;
-
-    switch (mark.type) {
-      case 'bold':
-        return <strong {...attributes}>{children}</strong>;
-      case 'code':
-        return <code {...attributes}>{children}</code>;
-      case 'italic':
-        return <em {...attributes}>{children}</em>;
-      case 'underlined':
-        return <u {...attributes}>{children}</u>;
-    }
   };
 
   /**
