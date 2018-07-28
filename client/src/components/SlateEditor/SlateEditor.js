@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Editor } from 'slate-react';
 import { Value } from 'slate';
 import { isKeyHotkey } from 'is-hotkey';
-import { Input } from 'reactstrap';
 
 import { Button, Icon, Toolbar } from './components';
 
