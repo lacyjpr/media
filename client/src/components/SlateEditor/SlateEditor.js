@@ -93,7 +93,9 @@ class SlateEditor extends Component {
           {this.renderBlockButton('bulleted-list', 'format_list_bulleted')}
         </Toolbar>
 
-        <Input type="text" />
+        <div contentEditable="true" suppressContentEditableWarning="true">
+          <h1>Title</h1>
+        </div>
 
         <Editor
           spellCheck
