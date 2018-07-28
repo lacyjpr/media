@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { Editor } from 'slate-react';
 import { Value } from 'slate';
 import { isKeyHotkey } from 'is-hotkey';
+import { Input } from 'reactstrap';
 
 import { Button, Icon, Toolbar } from './components';
+
 import { renderNode, renderMark } from '../../Utilities';
 import initialValue from './value.json';
 import './SlateEditor.css';
@@ -90,6 +92,9 @@ class SlateEditor extends Component {
           {this.renderBlockButton('numbered-list', 'format_list_numbered')}
           {this.renderBlockButton('bulleted-list', 'format_list_bulleted')}
         </Toolbar>
+
+        <Input type="text" />
+
         <Editor
           spellCheck
           autoFocus
