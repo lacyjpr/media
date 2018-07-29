@@ -8,7 +8,7 @@ const existingTitle = localStorage.getItem('title');
 class SlateViewer extends Component {
   state = {
     title: existingTitle || 'Title',
-    value: Value.fromJSON(existingValue),
+    value: Value.fromJSON(existingValue || { Content: null }),
   };
 
   render() {
