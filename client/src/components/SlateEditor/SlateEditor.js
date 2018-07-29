@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import { Editor } from 'slate-react';
 import { Value } from 'slate';
 import { isKeyHotkey } from 'is-hotkey';
@@ -49,6 +50,10 @@ class SlateEditor extends Component {
     value: Value.fromJSON(existingValue || initialValue),
   };
 
+  // Focus on title
+  componentDidMount() {
+    ReactDOM.findDOMNode(this.refs.title).focus();
+  }
   /**
    * Check if the current selection has a mark with `type` in it.
    *
@@ -261,6 +266,7 @@ class SlateEditor extends Component {
         </Toolbar>
 
         <div
+          ref="title"
           contentEditable="true"
           suppressContentEditableWarning="true"
           spellCheck
