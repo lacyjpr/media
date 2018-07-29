@@ -45,7 +45,7 @@ class SlateEditor extends Component {
    */
 
   state = {
-    title: existingTitle || 'Title',
+    title: null,
     value: Value.fromJSON(existingValue || initialValue),
   };
 
@@ -267,7 +267,7 @@ class SlateEditor extends Component {
           suppressContentEditableWarning="true"
           onInput={this.titleChange}
         >
-          <h1>{this.state.title}</h1>
+          <h1>{existingTitle || 'Title'}</h1>
         </div>
 
         <Editor
