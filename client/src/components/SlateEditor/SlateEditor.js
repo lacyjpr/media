@@ -138,13 +138,11 @@ class SlateEditor extends Component {
   };
 
   titleChange = event => {
-    console.log('titleChange called');
+    event.preventDefault();
     const title = event.target.textContent;
-    console.log(title);
     localStorage.setItem('title', title);
 
     this.setState({ title });
-    console.log(this.state);
   };
 
   /**
@@ -265,6 +263,8 @@ class SlateEditor extends Component {
         <div
           contentEditable="true"
           suppressContentEditableWarning="true"
+          ref={input => input && input.focus()}
+          spellCheck
           onInput={this.titleChange}
         >
           <h1>{existingTitle || 'Title'}</h1>
@@ -272,7 +272,6 @@ class SlateEditor extends Component {
 
         <Editor
           spellCheck
-          autoFocus
           placeholder="Enter some rich text..."
           value={this.state.value}
           onChange={this.onChange}
