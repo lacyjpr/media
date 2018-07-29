@@ -263,7 +263,6 @@ class SlateEditor extends Component {
         <div
           contentEditable="true"
           suppressContentEditableWarning="true"
-          ref={input => input && input.focus()}
           spellCheck
           onInput={this.titleChange}
         >
