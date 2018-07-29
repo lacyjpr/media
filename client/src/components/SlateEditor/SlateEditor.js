@@ -18,6 +18,7 @@ import './SlateEditor.css';
 const DEFAULT_NODE = 'paragraph';
 
 const existingValue = JSON.parse(localStorage.getItem('content'));
+const existingTitle = localStorage.getItem('title');
 
 /**
  * Define hotkey matchers.
@@ -44,6 +45,7 @@ class SlateEditor extends Component {
    */
 
   state = {
+    title: existingTitle || 'Title',
     value: Value.fromJSON(existingValue || initialValue),
   };
 
@@ -133,6 +135,16 @@ class SlateEditor extends Component {
     }
 
     this.setState({ value });
+  };
+
+  titleChange = event => {
+    console.log('titleChange called');
+    const title = event.target.textContent;
+    console.log(title);
+    localStorage.setItem('title', title);
+
+    this.setState({ title });
+    console.log(this.state);
   };
 
   /**
@@ -250,8 +262,12 @@ class SlateEditor extends Component {
           {this.renderBlockButton('bulleted-list', 'format_list_bulleted')}
         </Toolbar>
 
-        <div contentEditable="true" suppressContentEditableWarning="true">
-          <h1>Title</h1>
+        <div
+          contentEditable="true"
+          suppressContentEditableWarning="true"
+          onInput={this.titleChange}
+        >
+          <h1>{this.state.title}</h1>
         </div>
 
         <Editor
