@@ -9,43 +9,22 @@ import { renderNode, renderMark } from '../../Utilities';
 import initialValue from './value.json';
 import './SlateEditor.css';
 
-/**
- * Define the default node type.
- *
- * @type {String}
- */
-
+// Define the default node type.
 const DEFAULT_NODE = 'paragraph';
 
 const existingValue = JSON.parse(localStorage.getItem('content'));
 const existingTitle = localStorage.getItem('title');
 
-/**
- * Define hotkey matchers.
- *
- * @type {Function}
- */
-
+//Define hotkey matchers.
 const isBoldHotkey = isKeyHotkey('mod+b');
 const isItalicHotkey = isKeyHotkey('mod+i');
 const isUnderlinedHotkey = isKeyHotkey('mod+u');
 const isCodeHotkey = isKeyHotkey('mod+`');
 
-/**
- * The rich text example.
- *
- * @type {Component}
- */
-
 class SlateEditor extends Component {
-  /**
-   * Deserialize the initial editor value.
-   *
-   * @type {Object}
-   */
-
   state = {
     title: null,
+    // Deserialize the initial editor value.
     value: Value.fromJSON(existingValue || initialValue),
   };
 
@@ -53,38 +32,20 @@ class SlateEditor extends Component {
   componentDidMount() {
     this.title.focus();
   }
-  /**
-   * Check if the current selection has a mark with `type` in it.
-   *
-   * @param {String} type
-   * @return {Boolean}
-   */
 
+  // Check if the current selection has a mark with `type` in it.
   hasMark = type => {
     const { value } = this.state;
     return value.activeMarks.some(mark => mark.type === type);
   };
 
-  /**
-   * Check if the any of the currently selected blocks are of `type`.
-   *
-   * @param {String} type
-   * @return {Boolean}
-   */
-
+  // Check if the any of the currently selected blocks are of `type`.
   hasBlock = type => {
     const { value } = this.state;
     return value.blocks.some(node => node.type === type);
   };
 
-  /**
-   * Render a mark-toggling toolbar button.
-   *
-   * @param {String} type
-   * @param {String} icon
-   * @return {Element}
-   */
-
+  // Render a mark-toggling toolbar button.
   renderMarkButton = (type, icon) => {
     const isActive = this.hasMark(type);
 
@@ -98,14 +59,7 @@ class SlateEditor extends Component {
     );
   };
 
-  /**
-   * Render a block-toggling toolbar button.
-   *
-   * @param {String} type
-   * @param {String} icon
-   * @return {Element}
-   */
-
+  // Render a block-toggling toolbar button.
   renderBlockButton = (type, icon) => {
     let isActive = this.hasBlock(type);
 
@@ -125,12 +79,7 @@ class SlateEditor extends Component {
     );
   };
 
-  /**
-   * On change, save the new `value`.
-   *
-   * @param {Change} change
-   */
-
+  // On change, save the new `value`.
   onChange = ({ value }) => {
     // Check for change before saving
     if (value.document !== this.state.value.document) {
@@ -149,14 +98,7 @@ class SlateEditor extends Component {
     this.setState({ title });
   };
 
-  /**
-   * On key down, if it's a formatting command toggle a mark.
-   *
-   * @param {Event} event
-   * @param {Change} change
-   * @return {Change}
-   */
-
+  // On key down, if it's a formatting command toggle a mark.
   onKeyDown = (event, change) => {
     let mark;
 
@@ -177,13 +119,7 @@ class SlateEditor extends Component {
     return true;
   };
 
-  /**
-   * When a mark button is clicked, toggle the current mark.
-   *
-   * @param {Event} event
-   * @param {String} type
-   */
-
+  // When a mark button is clicked, toggle the current mark.
   onClickMark = (event, type) => {
     event.preventDefault();
     const { value } = this.state;
@@ -191,13 +127,7 @@ class SlateEditor extends Component {
     this.onChange(change);
   };
 
-  /**
-   * When a block button is clicked, toggle the block type.
-   *
-   * @param {Event} event
-   * @param {String} type
-   */
-
+  // When a block button is clicked, toggle the block type.
   onClickBlock = (event, type) => {
     event.preventDefault();
     const { value } = this.state;
@@ -243,12 +173,6 @@ class SlateEditor extends Component {
     this.onChange(change);
   };
 
-  /**
-   * Render.
-   *
-   * @return {Element}
-   */
-
   render() {
     return (
       <div className="wrap-editor">
@@ -287,9 +211,5 @@ class SlateEditor extends Component {
     );
   }
 }
-
-/**
- * Export.
- */
 
 export default SlateEditor;
