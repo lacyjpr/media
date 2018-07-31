@@ -53,6 +53,7 @@ class SlateEditor extends Component {
       <Button
         active={isActive}
         onMouseDown={event => this.onClickMark(event, type)}
+        title={type}
       >
         <Icon>{icon}</Icon>
       </Button>
@@ -73,6 +74,7 @@ class SlateEditor extends Component {
       <Button
         active={isActive}
         onMouseDown={event => this.onClickBlock(event, type)}
+        title={type}
       >
         <Icon>{icon}</Icon>
       </Button>
@@ -200,10 +202,10 @@ class SlateEditor extends Component {
           {this.renderBlockButton('block-quote', 'format_quote')}
           {this.renderBlockButton('numbered-list', 'format_list_numbered')}
           {this.renderBlockButton('bulleted-list', 'format_list_bulleted')}
-          <Button onMouseDown={this.onClickUndo}>
+          <Button onMouseDown={this.onClickUndo} title="Undo">
             <Icon>undo</Icon>
           </Button>
-          <Button onMouseDown={this.onClickRedo}>
+          <Button onMouseDown={this.onClickRedo} title="Redo">
             <Icon>redo</Icon>
           </Button>
         </Toolbar>
