@@ -180,6 +180,13 @@ class SlateEditor extends Component {
     this.onChange(change);
   };
 
+  onClickRedo = event => {
+    event.preventDefault();
+    const { value } = this.state;
+    const change = value.change().redo();
+    this.onChange(change);
+  };
+
   render() {
     return (
       <div className="wrap-editor">
@@ -195,6 +202,9 @@ class SlateEditor extends Component {
           {this.renderBlockButton('bulleted-list', 'format_list_bulleted')}
           <Button onMouseDown={this.onClickUndo}>
             <Icon>undo</Icon>
+          </Button>
+          <Button onMouseDown={this.onClickRedo}>
+            <Icon>redo</Icon>
           </Button>
         </Toolbar>
 
