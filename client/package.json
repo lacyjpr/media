@@ -16,7 +16,9 @@
     "react-dom": "^16.4.1",
     "react-emotion": "^9.2.6",
     "react-scripts": "1.1.4",
-    "reactstrap": "^6.3.0"
+    "reactstrap": "^6.3.0",
+    "slate": "^0.36.1",
+    "slate-react": "^0.14.2"
   },
   "scripts": {
     "start": "react-scripts start",
