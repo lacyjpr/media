@@ -64,11 +64,11 @@ class SlateEditor extends Component {
   renderBlockButton = (type, icon) => {
     let isActive = this.hasBlock(type);
 
-    if (['numbered-list', 'bulleted-list'].includes(type)) {
-      const { value } = this.state;
-      const parent = value.document.getParent(value.blocks.first().key);
-      isActive = this.hasBlock('list-item') && parent && parent.type === type;
-    }
+    // if (['numbered-list', 'bulleted-list'].includes(type)) {
+    //   const { value } = this.state;
+    //   const parent = value.document.getParent(value.blocks.first().key);
+    //   isActive = this.hasBlock('list-item') && parent && parent.type === type;
+    // }
 
     return (
       <Button
