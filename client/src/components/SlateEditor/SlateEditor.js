@@ -66,7 +66,7 @@ class SlateEditor extends Component {
 
     const { value } = this.state;
     console.log('value.blocks_root', value.blocks._root);
-    if (typeof value.blocks._root !== 'undefined') {
+    if (value.blocks.size > 0) {
       if (['numbered-list', 'bulleted-list'].includes(type)) {
         //const { value } = this.state;
         //console.log(value.document.getParent(value.blocks.first()));
