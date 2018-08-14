@@ -65,14 +65,10 @@ class SlateEditor extends Component {
     let isActive = this.hasBlock(type);
 
     const { value } = this.state;
-    console.log('value.blocks_root', value.blocks._root);
+
     if (value.blocks.size > 0) {
       if (['numbered-list', 'bulleted-list'].includes(type)) {
-        //const { value } = this.state;
-        //console.log(value.document.getParent(value.blocks.first()));
-        console.log('value.blocks', value.blocks._root);
         const parent = value.document.getParent(value.blocks.first().key);
-        console.log('parent', parent);
 
         isActive = this.hasBlock('list-item') && parent && parent.type === type;
       }
@@ -94,8 +90,6 @@ class SlateEditor extends Component {
     // Check for change before saving
     if (value.document !== this.state.value.document) {
       const content = JSON.stringify(value.toJSON());
-      console.log('content', content);
-      console.log('value', value);
       localStorage.setItem('content', content);
     }
 
