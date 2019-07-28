@@ -20,7 +20,9 @@ const Header = () => {
   return (
     <header>
       <Navbar color="light" light expand="xs">
-        <NavbarBrand href="/">Media</NavbarBrand>
+        <NavLink tag={Link} to="/">
+          Media
+        </NavLink>
         <Nav className="ml-auto nav" navbar>
           <AuthConsumer>
             {({ isAuth, login, logout }) => (
