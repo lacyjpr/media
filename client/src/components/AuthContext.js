@@ -12,11 +12,13 @@ class AuthProvider extends Component {
 
   login = () => {
     // Fake async with setTimeout
-    setTimeout(() => this.setState({ isAuth: true }), 1000);
+    setTimeout(() => this.setState({ isAuth: true }));
+    console.log(this.state.isAuth);
   };
 
   logout = () => {
     this.setState({ isAuth: false });
+    console.log(this.state.isAuth);
   };
 
   render() {
